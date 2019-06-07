@@ -20,7 +20,7 @@ const sortBands = (bandName) => {
             return -1
         }
     })
-    bandName.forEach(bandName => {
+    sortingBands.forEach(bandName => {
         bandList.insertAdjacentHTML('beforeend', `
         <tr>
         <td class="bands">${bandName}</td>
