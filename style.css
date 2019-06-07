@@ -1,11 +1,26 @@
-body{
-    background-color: sandybrown;
+body {
+    background-color: black;
+    background-image: url(./assets/audio-black-and-white-black-and-white-6966.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-h1{
+h1 {
     color: black;
+    text-align: center;
+}
+
+.bands {
+    font-size: 30px;
+    text-align: center;
 }
 
 table{
-    color: aliceblue;
+    background-color: whitesmoke;
+    opacity: 0.7;
+
 }
