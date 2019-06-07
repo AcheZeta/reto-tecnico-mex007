@@ -16,8 +16,10 @@ fetch('https://retos-tecnicos-backend.lizzie136.now.sh/bands')
             }
         })
         bandName.forEach(bandName => {
-            bandList.insertAdjacentHTML('beforeend', `<li>${bandName}</li>`)
-            console.log(bandName)
+            bandList.insertAdjacentHTML('beforeend', `
+            <tr>
+            <td class="bands">${bandName}</td>
+          </tr>
+          `)
         });
-        console.log(sortingBands)
     });
