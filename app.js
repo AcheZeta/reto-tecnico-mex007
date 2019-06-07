@@ -5,21 +5,26 @@ fetch('https://retos-tecnicos-backend.lizzie136.now.sh/bands')
         return response.json();
     })
     .then((bandName) => {
-        const orderBands = (bandName) => {
-            return bandName.replace(/^(a |an |the )/i, '')
-        };
-        let sortingBands = bandName.sort((a, b) => {
-            if (orderBands(a) > orderBands(b)) {
-                return 1
-            } else {
-                return -1
-            }
-        })
-        bandName.forEach(bandName => {
-            bandList.insertAdjacentHTML('beforeend', `
-            <tr>
-            <td class="bands">${bandName}</td>
-          </tr>
-          `)
-        });
+        sortBands(bandName)
     });
+
+
+const sortBands = (bandName) => {
+    const orderBands = (bandName) => {
+        return bandName.replace(/^(a |an |the )/i, '')
+    };
+    let sortingBands = bandName.sort((a, b) => {
+        if (orderBands(a) > orderBands(b)) {
+            return 1
+        } else {
+            return -1
+        }
+    })
+    bandName.forEach(bandName => {
+        bandList.insertAdjacentHTML('beforeend', `
+        <tr>
+        <td class="bands">${bandName}</td>
+      </tr>
+      `)
+    });
+}
