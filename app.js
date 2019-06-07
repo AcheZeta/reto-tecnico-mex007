@@ -4,9 +4,20 @@ fetch('https://retos-tecnicos-backend.lizzie136.now.sh/bands')
     .then((response) => {
         return response.json();
     })
-    .then((bands)=> {
-        console.log(bands);
-        let sortBands = bands.sort()
-        console.log(sortBands)
+    .then((bandName) => {
+        const orderBands = (bandName) => {
+            return bandName.replace(/^(a |an |the )/i, '')
+        };
+        let sortingBands = bandName.sort((a, b) => {
+            if (orderBands(a) > orderBands(b)) {
+                return 1
+            } else {
+                return -1
+            }
+        })
+        bandName.forEach(bandName => {
+            bandList.insertAdjacentHTML('beforeend', `<li>${bandName}</li>`)
+            console.log(bandName)
+        });
+        console.log(sortingBands)
     });
-
